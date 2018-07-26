@@ -100,7 +100,7 @@ var intro = function(s) {
 
       //Image
       s.blendMode(s.NORMAL);
-      s.image(img, -200, s.windowHeight - 520);
+      s.image(img, 0, s.windowHeight - 520);
 
       //Triangle
       s.blendMode(s.MULTIPLY);
@@ -117,19 +117,19 @@ var intro = function(s) {
       s.textStyle(s.BOLD);
       s.textSize(120);
       s.text('T', s.windowWidth/2, 300);
-      s.text('O', s.windowWidth/2 + 75, 300);
-      s.text('D', s.windowWidth/2 + 200, 300);
-      s.text('_', s.windowWidth/2 + 310, 280);
-      s.text('S', s.windowWidth/2 + 400, 300);
+      s.text('O', s.windowWidth/2 + 100, 300);
+      s.text('D', s.windowWidth/2 + 225, 300);
+      s.text('_', s.windowWidth/2 + 335, 280);
+      s.text('S', s.windowWidth/2 + 425, 300);
 
       //Title 2
       s.fill('#ff83ff');
       s.textSize(120);
       s.text('T', s.windowWidth/2 + 10, 310);
-      s.text('O', s.windowWidth/2 + 85, 310);
-      s.text('D', s.windowWidth/2 + 210, 310);
-      s.text('_', s.windowWidth/2 + 320, 290);
-      s.text('S', s.windowWidth/2 + 410, 310);
+      s.text('O', s.windowWidth/2 + 110, 310);
+      s.text('D', s.windowWidth/2 + 235, 310);
+      s.text('_', s.windowWidth/2 + 345, 290);
+      s.text('S', s.windowWidth/2 + 435, 310);
 
       //Paragraph
       s.blendMode(s.NORMAL);
@@ -137,8 +137,8 @@ var intro = function(s) {
       s.textStyle(s.ITALIC);
       s.textSize(16);
       s.textAlign(s.CENTER);
-      s.text('TOD_S es una plataforma que nació de mi interés por el feminismo y como una suerte de catarsis con la que buscaba sublimar experiencias negativas y dolorosas que viví desde mi lugar como mujer y desde la expresión de mi feminidad; a raíz de estas experiencias decidí contribuir de alguna forma a este movimiento. La necesidad de ubicarme en el vasto universo de la lucha feminista culminó en este proyecto, que es un manifiesto digital en donde exploro las posibilidades que he identificado en el feminismo. Esta es mi mirada. Y aunque es modesta y susceptible al cambio, es el resultado de un trabajo arduo por comprender lo que une y separa no solo a quienes nos consideramos feministas, sino –especialmente– a quienes no. Bienvenid_s tod_s.', s.windowWidth/2 - 5, 400, 500, 400);
-      
+      s.text('Este proyecto nació de mi interés por el feminismo y como una suerte de catarsis con la que buscaba sublimar experiencias negativas y dolorosas que viví desde mi lugar como mujer y desde la expresión de mi feminidad. A raíz de ello, decidí contribuir de alguna forma al movimiento. La necesidad de ubicarme en este vasto universo culminó en TOD_S, un manifiesto digital en donde exploro las posibilidades de inclusión, actualización y vigencia que he identificado en los feminismos. Esta es mi mirada. Y aunque es modesta y susceptible al cambio, es el resultado de un trabajo arduo por comprender lo que une y separa no solo a quienes nos consideramos feministas, sino, especialmente, a quienes no. Bienvenid_s tod_s.', s.windowWidth/2 - 20, 400, 500, 400);
+
     }
   };
 

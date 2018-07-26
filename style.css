@@ -3,6 +3,17 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #home {
   display: block;
 }

@@ -19,7 +19,11 @@ var home = function(s) {
     s.background('#FFFFFF');
 
     //Canvas
-    s.createCanvas(s.displayWidth, s.displayHeight);
+    s.createCanvas(s.windowWidth, s.windowHeight);
+  };
+
+  s.windowResized = function() {
+    s.resizeCanvas(s.windowWidth, s.windowHeight);
   };
 
   s.draw = function() {
@@ -29,7 +33,7 @@ var home = function(s) {
 
       //Background
       s.background('#FFFFFF');
-      s.image(logo, s.windowWidth/2 - 250, s.windowHeight/2 - 250, 500, 500);
+      s.image(logo, 2*s.windowWidth/7, s.windowHeight/2 - 3*s.windowWidth/14, 3*s.windowWidth/7, 3*s.windowWidth/7);
 
       //Menu
       // s.noStroke();
