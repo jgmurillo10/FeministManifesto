@@ -241,7 +241,7 @@ var p1_2 = function(s) {
   };
 
   s.open = function() {
-    window.open(project.url);
+    window.open(project.url, "_blank");
   };
 
   s.stop = function() {
