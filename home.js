@@ -43,7 +43,7 @@ var home = function(s) {
 
       //Background
       s.background('#FFFFFF');
-      s.image(logo, 2*s.windowWidth/7, s.windowHeight/2 - 3*s.windowWidth/14, 3*s.windowWidth/7, 3*s.windowWidth/7);
+      s.image(logo, 3*s.windowWidth/14, s.windowHeight/2 - 4*s.windowWidth/14, 4*s.windowWidth/7, 4*s.windowWidth/7);
 
       //Arrow
       var mx = s.windowWidth - 60;
