@@ -4,11 +4,11 @@ var home = function(s) {
   var homeColor;
   var principlesColor;
   var logo;
-  var flag;
+  var released;
 
 
   s.setup = function() {
-    flag = 0;
+    released = true;
     arrowColor = '#731dd3';
     homeColor = '#731dd3';
     principlesColor = '#731dd3';
@@ -106,8 +106,11 @@ var home = function(s) {
     }
   };
 
-  s.touchStarted = function() {
-    flag = 1;
+  s.mousePressed = function() {
+    if( !released ) {
+      return;
+    }
+    released = false;
     if(s.mouseInsideArrow()) {
       s.next();
     } else if(s.mouseInsideHome()) {
@@ -117,18 +120,20 @@ var home = function(s) {
     }
   };
 
-  s.mouseClicked = function() {
-    if( flag < 1 ){
-      if(s.mouseInsideArrow()) {
-        s.next();
-      } else if(s.mouseInsideHome()) {
-        s.home();
-      } else if(s.mouseInsidePrinciples()) {
-        s.first();
-      }
-      flag = 1;
-    }
+  s.mouseReleased = function() {
+	   released = true;
+	   return false;
   };
+
+  // s.mouseClicked = function() {
+  //   if(s.mouseInsideArrow()) {
+  //     s.next();
+  //   } else if(s.mouseInsideHome()) {
+  //     s.home();
+  //   } else if(s.mouseInsidePrinciples()) {
+  //     s.first();
+  //   }
+  // };
 
   s.mouseMoved = function() {
     if(s.mouseInsideArrow()){
