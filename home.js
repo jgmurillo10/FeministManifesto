@@ -35,18 +35,6 @@ var home = function(s) {
       s.background('#FFFFFF');
       s.image(logo, 2*s.windowWidth/7, s.windowHeight/2 - 3*s.windowWidth/14, 3*s.windowWidth/7, 3*s.windowWidth/7);
 
-      //Menu
-      // s.noStroke();
-      // s.textFont('Futura');
-      // s.fill(homeColor);
-      // s.textStyle(s.BOLD);
-      // s.textSize(12);
-      // s.text('i n i c i o', s.windowWidth/2 - 110, 30);
-      // s.rect(s.windowWidth/2 - 68, 35, 12, 6);
-      // s.fill(principlesColor);
-      // s.text('p r i n c i p i o s', s.windowWidth/2, 30);
-      // s.rect(s.windowWidth/2 + 86, 35, 12, 6);
-
       //Arrow
       var mx = s.windowWidth - 60;
       var my = s.windowHeight/2 - 10;
@@ -117,6 +105,16 @@ var home = function(s) {
   };
 
   s.mouseClicked = function() {
+    if(s.mouseInsideArrow()) {
+      s.next();
+    } else if(s.mouseInsideHome()) {
+      s.home();
+    } else if(s.mouseInsidePrinciples()) {
+      s.first();
+    }
+  };
+
+  s.touchStarted = function() {
     if(s.mouseInsideArrow()) {
       s.next();
     } else if(s.mouseInsideHome()) {
