@@ -5,6 +5,7 @@ var home = function(s) {
   var principlesColor;
   var logo;
   var released;
+  var mobile;
 
 
   s.setup = function() {
@@ -22,6 +23,13 @@ var home = function(s) {
 
     //Canvas
     s.createCanvas(s.windowWidth, s.windowHeight);
+
+    //Detect mobile
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      mobile = true;
+    } else {
+      mobile = false;
+    }
   };
 
   s.windowResized = function() {
@@ -107,33 +115,39 @@ var home = function(s) {
   };
 
   s.mousePressed = function() {
-    if( !released ) {
-      return;
-    }
-    released = false;
-    if(s.mouseInsideArrow()) {
-      s.next();
-    } else if(s.mouseInsideHome()) {
-      s.home();
-    } else if(s.mouseInsidePrinciples()) {
-      s.first();
+    if( mobile ) {
+      if( !released ) {
+        return false;
+      }
+      released = false;
+      if(s.mouseInsideArrow()) {
+        s.next();
+      } else if(s.mouseInsideHome()) {
+        s.home();
+      } else if(s.mouseInsidePrinciples()) {
+        s.first();
+      }
     }
   };
 
   s.mouseReleased = function() {
-	   released = true;
-	   return false;
+    if( mobile ) {
+      released = true;
+      return false;
+    }
   };
 
-  // s.mouseClicked = function() {
-  //   if(s.mouseInsideArrow()) {
-  //     s.next();
-  //   } else if(s.mouseInsideHome()) {
-  //     s.home();
-  //   } else if(s.mouseInsidePrinciples()) {
-  //     s.first();
-  //   }
-  // };
+  s.mouseClicked = function() {
+    if( !mobile ) {
+      if(s.mouseInsideArrow()) {
+        s.next();
+      } else if(s.mouseInsideHome()) {
+        s.home();
+      } else if(s.mouseInsidePrinciples()) {
+        s.first();
+      }
+    }
+  };
 
   s.mouseMoved = function() {
     if(s.mouseInsideArrow()){
@@ -158,7 +172,6 @@ var home = function(s) {
   s.next = function() {
     s.select('#intro').show();
     s.select('#home').hide();
-    flag = 0;
   };
 
   s.home = function() {
