@@ -106,7 +106,7 @@ var home = function(s) {
     }
   };
 
-  s.mouseClicked = function() {
+  s.touchStarted = function() {
     flag = 1;
     if(s.mouseInsideArrow()) {
       s.next();
@@ -117,7 +117,7 @@ var home = function(s) {
     }
   };
 
-  s.touchStarted = function() {
+  s.mouseClicked = function() {
     if( flag < 1 ){
       if(s.mouseInsideArrow()) {
         s.next();
