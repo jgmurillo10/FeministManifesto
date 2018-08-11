@@ -4,9 +4,11 @@ var home = function(s) {
   var homeColor;
   var principlesColor;
   var logo;
+  var flag;
 
 
   s.setup = function() {
+    flag = 0;
     arrowColor = '#731dd3';
     homeColor = '#731dd3';
     principlesColor = '#731dd3';
@@ -105,6 +107,7 @@ var home = function(s) {
   };
 
   s.mouseClicked = function() {
+    flag = 1;
     if(s.mouseInsideArrow()) {
       s.next();
     } else if(s.mouseInsideHome()) {
@@ -115,12 +118,15 @@ var home = function(s) {
   };
 
   s.touchStarted = function() {
-    if(s.mouseInsideArrow()) {
-      s.next();
-    } else if(s.mouseInsideHome()) {
-      s.home();
-    } else if(s.mouseInsidePrinciples()) {
-      s.first();
+    if( flag < 1 ){
+      if(s.mouseInsideArrow()) {
+        s.next();
+      } else if(s.mouseInsideHome()) {
+        s.home();
+      } else if(s.mouseInsidePrinciples()) {
+        s.first();
+      }
+      flag = 1;
     }
   };
 
@@ -147,6 +153,7 @@ var home = function(s) {
   s.next = function() {
     s.select('#intro').show();
     s.select('#home').hide();
+    flag = 0;
   };
 
   s.home = function() {
