@@ -198,7 +198,9 @@ var tutorial = function(s) {
       } else if(numero == 4) {
         rightArrowColor = '#ffdaff';
       }
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
     }
   };
 

@@ -259,7 +259,9 @@ var p5_1 = function(s) {
       homeColor = '#ff83ff';
       principlesColor = '#ff83ff';
       arrowColor = '#ff83ff'
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
     }
   };
 

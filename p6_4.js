@@ -173,7 +173,9 @@ var p6_4 = function(s) {
       arrowColor = '#FFFFFF';
       s.cursor(s.HAND);
     } else {
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
       arrowColor = '#e61dff';
       homeColor = '#e61dff';
       principlesColor = '#e61dff';

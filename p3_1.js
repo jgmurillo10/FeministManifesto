@@ -211,7 +211,9 @@ var p3_1 = function(s) {
       backgroundColor = '#04E973';
       homeColor = '#04E973';
       principlesColor = '#04E973';
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
       if(s.arrowInsideRect()) {
         arrowColor = arrowColor2;
       } else {

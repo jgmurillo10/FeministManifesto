@@ -166,7 +166,6 @@ var p6_2 = function(s) {
   };
 
   s.mouseInsideCalendar = function() {
-    s.rect(s.windowWidth/2 - 170, s.windowHeight/2 + 115, 340, 50);
     var hx1 = s.windowWidth/2 - 170;
     var hx2 = s.windowWidth/2 + 170;
     var hy1 = s.windowHeight/2 + 115;
@@ -209,7 +208,9 @@ var p6_2 = function(s) {
       principlesColor = '#FFFFFF';
       s.cursor(s.HAND);
     } else {
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
       homeColor = '#E61DFF';
       principlesColor = '#E61DFF';
       generateColor = '#ffffff';
@@ -221,9 +222,9 @@ var p6_2 = function(s) {
   s.another = function() {
     challenge = private_challenges[Math.floor(Math.random() * private_challenges.length)];
   };
-  Date.prototype.addHours = function(h) {    
-    this.setTime(this.getTime() + (h*60*60*1000)); 
-    return this;   
+  Date.prototype.addHours = function(h) {
+    this.setTime(this.getTime() + (h*60*60*1000));
+    return this;
   };
 
   Date.prototype.addDays = function(days) {
@@ -252,7 +253,7 @@ var p6_2 = function(s) {
     var cal = ics();
     cal.addEvent(eventName, challenge.name, location, iDate, fDate);
     cal.download(fileName);
-   
+
   };
 
   s.next = function() {

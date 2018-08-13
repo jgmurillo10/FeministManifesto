@@ -152,7 +152,6 @@ var p7_2 = function(s) {
   };
 
   s.mouseInsideSend = function() {
-    s.rect(s.windowWidth/2 + 360, s.windowHeight/5 + 125, 130, 50);
     var hx1 = s.windowWidth/2 + 360;
     var hx2 = s.windowWidth/2 + 490;
     var hy1 = s.windowHeight/5 + 125;
@@ -190,7 +189,9 @@ var p7_2 = function(s) {
       principlesColor = '#FFFFFF';
       s.cursor(s.HAND);
     } else {
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
       homeColor = '#217df4';
       principlesColor = '#217df4';
       sendColor = '#ffffff';

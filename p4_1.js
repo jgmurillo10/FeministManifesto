@@ -215,7 +215,9 @@ var p4_1 = function(s) {
       homeColor = '#ffff85';
       principlesColor = '#ffff85';
       arrowColor = '#ffff85'
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
     }
   };
 

@@ -6,6 +6,7 @@ var p6_1 = function(s) {
   var homeColor;
   var principlesColor;
   var count;
+  var overPlural;
 
   s.setup = function() {
     privadoColor = '#E61DFF';
@@ -78,7 +79,7 @@ var p6_1 = function(s) {
       s.textStyle(s.NORMAL);
       s.textSize(52);
       s.text('Y TAMBIÉN ES', s.windowWidth/2 - 180, s.windowHeight/2 + 35);
-      s.setColor();
+      // s.setColor();
     }
   };
 
@@ -175,10 +176,12 @@ var p6_1 = function(s) {
       principlesColor = '#FFFFFF';
       s.cursor(s.HAND);
     } else {
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
       homeColor = '#e61dff';
       principlesColor = '#e61dff';
-      s.setColor();
+      // s.setColor();
     }
   };
 

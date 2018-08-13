@@ -224,7 +224,9 @@ var intro = function(s) {
       principlesColor2 = '#21f4f4';
       arrowColor1 = '#ff83ff';
       arrowColor2 = '#21f4f4';
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
     }
   };
 

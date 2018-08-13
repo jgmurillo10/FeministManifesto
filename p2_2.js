@@ -168,7 +168,9 @@ var p2_2 = function(s) {
       arrowColor = '#FFFFFF';
       s.cursor(s.HAND);
     } else {
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
       homeColor = '#217DF4';
       principlesColor = '#217DF4';
       arrowColor = '#217DF4';

@@ -167,7 +167,6 @@ var p6_3 = function(s) {
   };
 
   s.mouseInsideCalendar = function() {
-    s.rect(s.windowWidth/2 - 170, s.windowHeight/2 + 115, 340, 50);
     var hx1 = s.windowWidth/2 - 170;
     var hx2 = s.windowWidth/2 + 170;
     var hy1 = s.windowHeight/2 + 115;
@@ -210,7 +209,9 @@ var p6_3 = function(s) {
       principlesColor = '#FFFFFF';
       s.cursor(s.HAND);
     } else {
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
       homeColor = '#E61DFF';
       principlesColor = '#E61DFF';
       generateColor = '#ffffff';

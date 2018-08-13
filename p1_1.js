@@ -152,7 +152,9 @@ var p1_1 = function(s) {
       s.cursor(s.HAND);
     } else {
       overPlural = false;
-      s.cursor(s.ARROW);
+      if(s.mouseX != 0 && s.mouseY != 0) {
+        s.cursor(s.ARROW);
+      }
       homeColor = '#e61dff';
       principlesColor = '#e61dff';
     }
