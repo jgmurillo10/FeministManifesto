@@ -248,6 +248,10 @@ var home = function(s) {
         s.home();
       } else if(s.mouseInsidePrinciples()) {
         s.first();
+      } else if(s.mouseInsideLetters()) {
+        onLetters = true;
+      } else {
+        onLetters = false;
       }
     }
   };
